@@ -7,3 +7,13 @@ class ToDo (models.Model):
     created_at = models.DateField(auto_now_add = True)
     is_closed = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
+
+class library (models.Model):
+    title = models.CharField(max_length=30)
+    subtitle = models.CharField(max_length=60)
+    description = models.TextField(max_length=500)
+    price = models.BigIntegerField(max_length=100)
+    genre = models.CharField(max_length=15)
+    author = models.CharField(max_length=20)
+    year = models.DateField(auto_now = False)
+    date = models.DateField(auto_now_add=True)
