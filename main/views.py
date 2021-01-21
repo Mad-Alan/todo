@@ -17,3 +17,7 @@ def second(request):
 
 def third(request):
     return render(request, "index3.html")
+
+def fourth(request):
+    books_list = library.objects.all()
+    return render(request, "books.html", {"books_list": books_list})
