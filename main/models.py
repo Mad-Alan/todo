@@ -4,7 +4,7 @@ from django.db import models
 
 class ToDo (models.Model):
     text = models.CharField(max_length=100)
-    created_at = models.DateField(auto_now_add = True)
+    created_at = models.DateTimeField(auto_now_add = True)
     is_closed = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
 
@@ -15,5 +15,5 @@ class library (models.Model):
     price = models.BigIntegerField(max_length=100)
     genre = models.CharField(max_length=15)
     author = models.CharField(max_length=20)
-    year = models.DateField(auto_now = False)
-    date = models.DateField(auto_now_add=True)
+    year = models.DateTimeField(auto_now = False)
+    date = models.DateTimeField(auto_now_add=True)
