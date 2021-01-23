@@ -18,7 +18,7 @@ def second(request):
 def third(request):
     return render(request, "index3.html")
 
-def fourth(request):
+def books_def(request):
     books_list = library.objects.all()
     return render(request, "books.html", {"books_list": books_list})
 
@@ -28,3 +28,18 @@ def add_todo(request):
     todo = ToDo(text=text)
     todo.save()
     return redirect(test)
+
+def add_book(request):
+    form = request.POST
+    book = library (
+        title = form["book_title"],
+        subtitle = form["book_subtitle"],
+        description = form["book_description"],
+        price = form["book_price"],
+        genre = form["book_genre"],
+        author = form["book_author"],
+        year = form["book_year"][:10],
+    )
+
+    book.save()
+    return redirect(books_def)

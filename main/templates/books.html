@@ -7,8 +7,25 @@
     <title>Books</title>
 </head>
 <body>
+    <section>
+        <div class="create_container">
+            <form action="{% url 'add-book' %}" method = "POST">
+                {% csrf_token %}  
+                <h3 style="color: brown; text-transform: uppercase; font-style: italic; font-weight: bold;">Страница для добавления книг</h3>
+                <input class="create_input" type="text" placeholder="Заголовок книги" name="book_title"><br><br>
+                <input class="create_input" type="text" placeholder="Подзаголовок книги" name="book_subtitle"><br><br>
+                <input class="create_input" type="text" placeholder="Описание" name="book_description"><br><br>
+                <input class="create_input" type="number" placeholder="Цена" name="book_price"><br><br>
+                <input class="create_input" type="text" placeholder="Жанр" name="book_genre"><br><br>
+                <input class="create_input" type="text" placeholder="Автор" name="book_author"><br><br>
+                <input class="create_input" type="date" placeholder="Год выхода" name="book_year"><br><br>
+               
+                <button class="create_button">Добавить</button>
+            </form>
+        </div>
+    </section>
     {% for book in books_list %}
-        {{ book.title}} - {{book.subtitle}} - {{book.year}} 
+        <h3>{{ book.title}} - {{book.subtitle}} - {{book.year}}</h3> 
     {% endfor %}
 </body>
 </html>
