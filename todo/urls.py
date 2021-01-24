@@ -33,6 +33,7 @@ urlpatterns = [
     path("add-book/", add_book, name = "add-book"),
     path("mark-book/<id>/", mark_book, name = "mark-book"),
     path("delete-book/<id>/", delete_book, name = "delete-book"),
+    path("books-detail/<id>/",BooksDetail, name = "books-detail"),
 
 
 

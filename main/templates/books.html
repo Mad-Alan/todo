@@ -29,15 +29,16 @@
         </section >
         <section >
             {% for book in books_list %}
-                <h3>{{ book.title}} - {{book.author}}</h3> 
-                <h3>{{book.subtitle}} - {{book.year}}</h3> 
+                <h3>Название: {{ book.title}} </h3> 
+                <h3>Автор: {{book.author}} - Жанр: {{book.genre}}</h3> 
                 <div> 
-                    <a href = "{%url 'delete-book' book.id %}"><button style="background-color: red;">Удалить</button></a> 
+                    <a href = "{% url 'delete-book' book.id %}"><button style="background-color: red;">Удалить</button></a> 
                     {% if book.is_favorite %}
                     <a href="{% url 'mark-book' book.id %}"><button style="background-color: orange;">Избранное</button><br></a>
                     {% else %}
                     <a href="{% url 'mark-book' book.id %}"><button  style="background-color: grey;">Избранное</button><br></a>
                     {% endif %}
+                    <a href="{% url 'books-detail' book.id %}"> <button> Детали </button></a>
                     <hr>
                 </div>
 
