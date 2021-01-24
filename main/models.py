@@ -16,3 +16,5 @@ class library (models.Model):
     genre = models.CharField(max_length=30)
     author = models.CharField(max_length=100)
     year = models.DateField()
+    is_favorite = models.BooleanField(default=False)
+    is_closed = models.BooleanField(default=False)
