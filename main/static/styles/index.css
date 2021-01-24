@@ -25,14 +25,18 @@ section{
 
 .create_button{
     padding: 12px 20px;
-    background-color: rgb(224, 24, 198);
-    border: 1px solid rgb(252, 3, 239);
+    background-color: rgb(247, 111, 229);
+    border: 1px solid rgb(0, 0, 0);
     color: white;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.create_button:hover{
+    background-color: rgb(245, 4, 253);
 }
 
 /* создали псевдокласс active, который отвечает за изменение кнопки при нажатии на неё */

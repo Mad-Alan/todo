@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
-    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/indexBooks.css' %}">
     <link rel="stylesheet" href="./styles/checkbox.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
             <div class="create_container">
                 <form action="{% url 'add-book' %}" method = "POST">
                     {% csrf_token %}  
-                    <h3 style="color: brown; text-transform: uppercase; font-style: italic; font-weight: bold;">Страница для добавления книг</h3>
+                    <h3 class="title">Страница для добавления книг</h3><br>
                     <input class="create_input" type="text" placeholder="Заголовок книги" name="book_title"><br><br>
                     <input class="create_input" type="text" placeholder="Подзаголовок книги" name="book_subtitle"><br><br>
                     <input class="create_input" type="text" placeholder="Описание" name="book_description"><br><br>
@@ -28,17 +28,18 @@
             </div>
         </section >
         <section >
+            <h3 class="title">Наша библиотека:</h3><br>
             {% for book in books_list %}
                 <h3>Название: {{ book.title}} </h3> 
                 <h3>Автор: {{book.author}} - Жанр: {{book.genre}}</h3> 
-                <div> 
-                    <a href = "{% url 'delete-book' book.id %}"><button style="background-color: red;">Удалить</button></a> 
+                <div class="title"> 
+                    <a href = "{% url 'delete-book' book.id %}"><button class="delete_button">Удалить</button></a> 
                     {% if book.is_favorite %}
-                    <a href="{% url 'mark-book' book.id %}"><button style="background-color: orange;">Избранное</button><br></a>
+                    <a href="{% url 'mark-book' book.id %}"><button class="favorite_button">Избранное</button></a>
                     {% else %}
-                    <a href="{% url 'mark-book' book.id %}"><button  style="background-color: grey;">Избранное</button><br></a>
+                    <a href="{% url 'mark-book' book.id %}"><button  class="unfavorite_button">Избранное</button></a>
                     {% endif %}
-                    <a href="{% url 'books-detail' book.id %}"> <button> Детали </button></a>
+                    <a href="{% url 'books-detail' book.id %}"> <button class="info_button"> Детали </button><br></a>
                     <hr>
                 </div>
 
