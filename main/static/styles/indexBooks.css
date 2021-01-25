@@ -108,3 +108,14 @@ section{
     background-color: blue;
 }
 
+.image{
+    width: 500px;
+    height: 500px;
+    border: 4px groove yellow;
+    background-image: url(https://24tv.ua/resources/photos/news/1200x675_DIR/202006/1360434.jpg?202006160247);
+    background-position: 50% 50%;
+    background-size: cover;
+    vertical-align: center;
+    background-repeat: no-repeat; 
+    margin: auto;
+}
