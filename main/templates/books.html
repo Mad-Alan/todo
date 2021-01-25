@@ -14,7 +14,7 @@
             <div class="create_container">
                 <form action="{% url 'add-book' %}" method = "POST">
                     {% csrf_token %}  
-                    <h3 class="title">Страница для добавления книг</h3><br>
+                    <h3 class="title" style="color: rgb(62, 95, 0);">Страница для добавления книг</h3><br>
                     <input class="create_input" type="text" placeholder="Заголовок книги" name="book_title"><br><br>
                     <input class="create_input" type="text" placeholder="Подзаголовок книги" name="book_subtitle"><br><br>
                     <input class="create_input" type="text" placeholder="Описание" name="book_description"><br><br>
@@ -28,7 +28,7 @@
             </div>
         </section >
         <section >
-            <h3 class="title">Наша библиотека:</h3><br>
+            <h3 class="title" style="color: rgb(201, 132, 4);">Наша библиотека:</h3><br>
             {% for book in books_list %}
                 <h3>Название: {{ book.title}} </h3> 
                 <h3>Автор: {{book.author}} - Жанр: {{book.genre}}</h3> 
